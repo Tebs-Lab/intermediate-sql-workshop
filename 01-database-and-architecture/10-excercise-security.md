@@ -1,5 +1,7 @@
 # Exercise: Security
 
+## Part 1: Discussion
+
 In your groups, discuss the following questions related to the consumers of data for each of the companies.
 
 1. Does this company store sensitive data about individual users?
@@ -28,3 +30,17 @@ Twitter is a social media company that primarily focuses on short text, photo, a
 ### Kaiser Permanente
 
 Kaiser Permanente is a large medical company. They provide direct care as well as supporting functions such as medical insurance. They have hospitals in several states — meaning they must acquiesce to many different regulatory regimes (including the federal government). The support a variety of online/tele-health services, as well as support for (somewhat) inter-operative medical records.
+
+## Part 2: Technical
+
+On your copy of the AdventureWorks database make two new users and assign them with appropriate read and write access such that:
+
+1. One of the users represents a sales analyst role.
+    1. This person should be able to read product, purchasing, and sales information.
+    2. But, this person should not be allowed to access any HR information.
+    3. Nor should they be able to write to any table, or create any tables.
+
+2. One of the users represents a program that vendors use to update their own product information.
+    1. This user should only be able to write to the Product table and do absolutely nothing else.
+
+Once you've created these users, discuss their specific limitations and the benefits or drawbacks of them. Consider the "principle of least privilege," but also consider the practical impact of these roles for the groups ostensibly using them.
