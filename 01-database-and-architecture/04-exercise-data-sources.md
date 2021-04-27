@@ -42,7 +42,6 @@ Devise and enact a strategy to import this data such that it properly updates ro
 
 1. Can you completely automate this?
 2. Can you partially automate this, or reduce the number of times you have to initiate a database query to 1?
-3. Can you do this without manually (and individually) updating each relevant row in the database?
 
 ### Bonus Points
 
