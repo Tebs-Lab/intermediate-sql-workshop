@@ -15,7 +15,6 @@ In your groups, discuss the following questions related to the consumers of data
 3. Considering the "principle of least privilege" and previous discussions about data providers and consumers:
     1. How might these consumers and providers be limited in terms of their database access?
     2. To what extent could any of the consumers or providers create an attack vector?
-    3. What kinds of attacks do your consumers and providers open this company to?
 
 ## Reminder: The Companies:
 
