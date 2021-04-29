@@ -28,3 +28,7 @@ In groups you will design a possible schema for a library (as in, a place you ca
     1. For example, is it beneficial to have an Authors table vs AuthorName as a field in the Books table?
 4. Given the search requirements, which fields should be indexed?
     1. What kind of indexes might you use?
+
+## A helpful tool
+
+Consider using a schema diagram tool such as: https://app.diagrams.net/
