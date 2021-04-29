@@ -8,6 +8,12 @@ For each of the following described queries involving the Adventure Works databa
 
 ## The Queries:
 
-1. Join the Store table with the Customer table using the CustomerID field.
+1. Join the Store table with the Customer table using the storeid field.
 2. Use `select`, `group by`, and `count` to determine how many Products there are in each Color.
-3. Join the `SalesOrderHeader` table with both the `SalesPerson` and `Customer` tables, selecting every possible column.
+3. Join the `SalesOrderHeader` table with both the `SalesPerson` and `Customer` tables (meaning you'll need 2 joins), selecting every possible column.
+4. Explore for yourself! Write a query that you think is interesting, and look at the query plan. These are some potentially interesting factors...
+    * Indexes on the fields.
+    * where clauses
+    * Subqueries
+    * Regex
+    * group by / having clauses
