@@ -1,2 +1,0 @@
-# Exercise: Common Table Expressions
-
