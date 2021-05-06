@@ -25,10 +25,51 @@ order by
 
 2. Create a query that uses an aggregate to determine each sales person's largest and smallest sale on a monthly basis. Then, use that query as a table with the CTE syntax, and select from it using another aggregate  to compute the average of each sales person's smallest and largest sales. (this "double aggregate" is a major benefit of CTEs)
 
-3. Combine a CTU with Union! Make a query that involves any numerical field, then using three selects and three unions `sum` that numerical value using...
-    1. All values.
-    2. Odd values.
-    3. Even values.
+3. This query using `intersect` will identify all the lastnames that are shared by an employee and a customer that is an individual (rather than a store).
 
-Union these three selects into a single query with 3 rows. 
+```sql
+select 
+  p.lastname
+from humanresources.employee e
+join person.person p on p.businessentityid=e.businessentityid
+intersect
+	select 
+	  p.lastname
+	from sales.customer c
+	join person.person p on c.personid=p.businessentityid;
+```
+
+Update the query to use `intersect all` and an aggregate to count how many people share that name. 
+
+SOLUTION:
+
+```sql
+select lastname, count(1) from 
+  (select 
+    p.lastname
+  from humanresources.employee e
+  join person.person p on p.businessentityid=e.businessentityid
+  intersect all
+    select 
+      p.lastname
+    from sales.customer c
+    join person.person p on c.personid=p.businessentityid) as shared_names
+group by lastname;
+
+-- or
+
+with shared_names as (select 
+  p.lastname
+from humanresources.employee e
+join person.person p on p.businessentityid=e.businessentityid
+intersect all
+	select 
+	  p.lastname
+	from sales.customer c
+	join person.person p on c.personid=p.businessentityid)
+	
+select lastname, count(1) from shared_names
+group by lastname;
+
+```
 
