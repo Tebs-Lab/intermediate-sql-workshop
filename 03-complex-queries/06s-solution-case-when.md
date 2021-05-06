@@ -40,3 +40,20 @@ order by vacation_action;
 ```
 
 3. Use an aggregate and a case statement to select all `purchasing.productvendors` and a column that indicates for each entry if that productvendor has a higher `averageleadtime` than the global average across all products. That column should read "More Lead Time" if so, and "Standard Lead Time" if not.
+
+```sql
+select 
+  p.name,
+  v.name,
+  pv.averageleadtime,
+  case 
+    when 
+	  averageleadtime > (select avg(averageleadtime) from purchasing.productvendor)
+	  then 'More Lead Time'
+	else 'Standard Lead Time'
+  end
+from purchasing.productvendor pv
+join purchasing.vendor v on v.businessentityid=pv.businessentityid
+join production.product p on p.productid=pv.productid
+order by averageleadtime;
+```
