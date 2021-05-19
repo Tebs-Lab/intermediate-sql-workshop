@@ -120,7 +120,7 @@ from min_max_sales
 group by businessentityid, name;
 ```
 
-3. This query using `intersect` will identify all the lastnames that are shared by an employee and a customer that is an individual (rather than a store).
+4. This query using `intersect` will identify all the lastnames that are shared by an employee and a customer that is an individual (rather than a store).
 
 ```sql
 select 
