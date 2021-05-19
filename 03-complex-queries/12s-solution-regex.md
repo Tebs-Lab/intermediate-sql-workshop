@@ -43,7 +43,7 @@ select
   name 
 from production.product
 where
-  name ~* 'HL.*Frame.*Black';
+  name ~* 'HL.*Frame.*(Black|Yellow)';
 ```
 
 4. Write a query to select all the descriptions from the `productdescription` table that exclusively use letters from the English alphabet (lowercase or uppercase), whitespace characters, and punctuation.
