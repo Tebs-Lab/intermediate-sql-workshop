@@ -101,18 +101,18 @@ create index soh_btree_orderdate on sales.salesorderheader using btree (orderdat
 
 ```
 # point
- Index Scan using soh_hash_orderdate on salesorderheader  (cost=0.29..262.18 rows=3193 width=431)
+ Index Scan using soh_btree_orderdate on salesorderheader  (cost=0.29..262.18 rows=3193 width=431)
    Index Cond: (orderdate = ANY ('{...dates...}'::timestamp without time zone[]))
 
 # range
  Bitmap Heap Scan on salesorderheader  (cost=50.18..840.40 rows=2703 width=431)
    Recheck Cond: (((orderdate >= '2011-05-31 00:00:00'::timestamp without time zone) AND (orderdate <= '2011-06-30 00:00:00'::timestamp without time zone)) OR ((orderdate >= '2013-01-31 00:00:00'::timestamp without time zone) AND (orderdate <= '2013-06-30 00:00:00'::timestamp without time zone)) OR ((orderdate >= '2014-05-31 00:00:00'::timestamp without time zone) AND (orderdate <= '2011-09-30 00:00:00'::timestamp without time zone)))
    ->  BitmapOr  (cost=50.18..50.18 rows=2729 width=0)
-         ->  Bitmap Index Scan on soh_hash_orderdate  (cost=0.00..6.05 rows=176 width=0)
+         ->  Bitmap Index Scan on soh_btree_orderdate  (cost=0.00..6.05 rows=176 width=0)
                Index Cond: ((orderdate >= '2011-05-31 00:00:00'::timestamp without time zone) AND (orderdate <= '2011-06-30 00:00:00'::timestamp without time zone))
-         ->  Bitmap Index Scan on soh_hash_orderdate  (cost=0.00..36.25 rows=2396 width=0)
+         ->  Bitmap Index Scan on soh_btree_orderdate  (cost=0.00..36.25 rows=2396 width=0)
                Index Cond: ((orderdate >= '2013-01-31 00:00:00'::timestamp without time zone) AND (orderdate <= '2013-06-30 00:00:00'::timestamp without time zone))
-         ->  Bitmap Index Scan on soh_hash_orderdate  (cost=0.00..5.86 rows=157 width=0)
+         ->  Bitmap Index Scan on soh_btree_orderdate  (cost=0.00..5.86 rows=157 width=0)
                Index Cond: ((orderdate >= '2014-05-31 00:00:00'::timestamp without time zone) AND (orderdate <= '2011-09-30 00:00:00'::timestamp without time zone))
 ```
 
