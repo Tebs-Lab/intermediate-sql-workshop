@@ -23,5 +23,3 @@ Creating these views may require clever use of any number of the techniques we'v
     * including information from multiple tables.
     * including information that must be computed with an aggregate
     * using a case statement and or regular expression
-
-4. Bonus points: see what the query planner says about selecting * from your view... could you improve the efficiency of this query somehow?
