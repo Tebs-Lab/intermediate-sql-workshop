@@ -54,6 +54,4 @@ All of the material in this repository is dedicated to the public domain. See th
 
 ## Support Free Curricula and Teb's Lab
 
-These materials were created by [Teb's Lab](https://tebs-lab.com). We maintain several open source curriculum repositories, all with public domain dedications. Browse our repos on [Github](https://github.com/Tebs-Lab/), or [our website](https://www.tebs-lab.com/education).
-
-You can support the creation of more free, open source, public domain educational materials by sharing them with others, [subscribing to our newsletter](http://eepurl.com/dum8IP), becoming a subscriber on [Patreon](https://www.patreon.com/tebsLab), or [arranging a training from Teb's Lab](https://www.tebs-lab.com/contracting).
+These materials were created by [Teb's Lab](https://tebs-lab.com). We maintain several open source curriculum repositories, all with public domain dedications. Browse our repos on [Github](https://github.com/Tebs-Lab/), or [our website](https://www.tebs-lab.com/education). You can also [arrange a training from Teb's Lab](https://www.tebs-lab.com/contracting) to teach this material.
